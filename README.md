@@ -1,10 +1,10 @@
 # stroebs/simple-vsftpd
 
-Minimal Alpine Linux Docker container with `vsftpd` exposed, supports PASV connections.
+Minimal Alpine Linux Docker container with `vsftpd` exposed, supports PASV connections. Stored as an automated build on Dockerhub: [stroebs/simple-vsftpd](https://hub.docker.com/r/stroebs/simple-vsftpd)
 
 The entry script uses Augeas to configure VSFTPd and at the time of compiling this, `seccomp_sandbox` was missing from the Augeas lenses, so it had to be included manually.
 
-Will only chroot users if `SYMLINK` is not set.
+Will only chroot users if `SYMLINK` is not set. Useful if you want to mount volumes per user.
 
 ## Environment Options
 
