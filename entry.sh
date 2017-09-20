@@ -31,7 +31,7 @@ fi
 if [ -n "${FTP_USERS}" ]; then
   USERS=$(echo $FTP_USERS | tr "," "\n")
   for U in $USERS; do
-    IFS=':' read -ra FU <<< "$FTP_USERS"
+    IFS=':' read -ra FU <<< "$U"
     _NAME=${FU[0]}
     _PASS=${FU[1]}
     _UID=${FU[2]}
