@@ -66,21 +66,21 @@ else
 fi
 
 # Setup vsftpd configuration variables
-printf "%s\n" \
-  "set /files/etc/vsftpd/vsftpd.conf/local_enable YES" \
-  "set /files/etc/vsftpd/vsftpd.conf/allow_writeable_chroot YES" \
-  "set /files/etc/vsftpd/vsftpd.conf/ftpd_banner ${FTP_BANNER}" \
-  "set /files/etc/vsftpd/vsftpd.conf/dirmessage_enable YES" \
-  "set /files/etc/vsftpd/vsftpd.conf/max_clients 10" \
-  "set /files/etc/vsftpd/vsftpd.conf/max_per_ip 5" \
-  "set /files/etc/vsftpd/vsftpd.conf/write_enable YES" \
-  "set /files/etc/vsftpd/vsftpd.conf/local_umask 022" \
-  "set /files/etc/vsftpd/vsftpd.conf/passwd_chroot_enable YES" \
-  "set /files/etc/vsftpd/vsftpd.conf/pasv_enable YES" \
-  "set /files/etc/vsftpd/vsftpd.conf/listen_ipv6 NO" \
-  "set /files/etc/vsftpd/vsftpd.conf/anonymous_enable NO" \
-  "set /files/etc/vsftpd/vsftpd.conf/seccomp_sandbox NO" \
+printf '%s\n' \
+  'set /files/etc/vsftpd/vsftpd.conf/local_enable YES' \
+  'set /files/etc/vsftpd/vsftpd.conf/allow_writeable_chroot YES' \
+  'set /files/etc/vsftpd/vsftpd.conf/dirmessage_enable YES' \
+  'set /files/etc/vsftpd/vsftpd.conf/max_clients 10' \
+  'set /files/etc/vsftpd/vsftpd.conf/max_per_ip 5' \
+  'set /files/etc/vsftpd/vsftpd.conf/write_enable YES' \
+  'set /files/etc/vsftpd/vsftpd.conf/local_umask 022' \
+  'set /files/etc/vsftpd/vsftpd.conf/passwd_chroot_enable YES' \
+  'set /files/etc/vsftpd/vsftpd.conf/pasv_enable YES' \
+  'set /files/etc/vsftpd/vsftpd.conf/listen_ipv6 NO' \
+  'set /files/etc/vsftpd/vsftpd.conf/anonymous_enable NO' \
+  'set /files/etc/vsftpd/vsftpd.conf/seccomp_sandbox NO' \
 | augtool -s
+augtool -s "set /files/etc/vsftpd/vsftpd.conf/ftpd_banner ${FTP_BANNER}"
 
 # Catch stop signals
 stop() {
